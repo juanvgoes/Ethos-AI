@@ -1,0 +1,71 @@
+# ============================================================
+# NUNCA subir para o GitHub: credenciais e dados pessoais
+# ============================================================
+
+# Credenciais do Google (Gmail). Qualquer pessoa com esse arquivo acessa a conta
+# que autorizou, por isso ele NÃO pode ir para o repositório.
+credentials.json
+client_secret*.json
+
+# Token de acesso gerado na primeira autorização do Gmail.
+# O código cria este arquivo como "token.json" (e, por segurança, ignoramos
+# também "tokens.json" e qualquer variação com "token" no nome).
+token.json
+tokens.json
+*token*.json
+
+# Memória pessoal da Ethos (fatos, tarefas, eventos, gírias). Contém dados
+# sobre você: fica só no seu computador.
+memoria_ethos.json
+
+# Variáveis de ambiente e chaves de API
+.env
+.env.*
+*.pem
+*.key
+secrets.*
+
+# ============================================================
+# Arquivos grandes que se baixam novamente (não precisam ir ao GitHub)
+# ============================================================
+
+# Vozes do Piper: cada uma tem ~60 MB. Quem usa baixa com:
+#   python -m piper.download_voices <nome-da-voz>
+*.onnx
+*.onnx.json
+
+# Modelos de IA ficam no Ollama, não aqui, mas por garantia:
+*.gguf
+*.bin
+*.safetensors
+
+# ============================================================
+# Arquivos gerados automaticamente
+# ============================================================
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*.pyc
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Imagens de teste geradas durante o desenvolvimento
+ethos_icone_preview.png
+
+# Logs e saídas temporárias
+*.log
+*.tmp
+/tmp/
+
+# ============================================================
+# Arquivos do sistema operacional e editores
+# ============================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
