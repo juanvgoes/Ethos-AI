@@ -180,6 +180,14 @@ _FUNCOES = {
 
 
 def executar(nome, args):
-    if nome in _FUNCOES:
+    if nome not in _FUNCOES:
+        return None
+    try:
         return _FUNCOES[nome](**args)
-    return None
+    except Exception as e:
+        texto = str(e).lower()
+        if "unable to find the server" in texto or "failed to establish" in texto \
+                or "connection" in texto or "timed out" in texto or "name or service" in texto:
+            return ("Não consegui acessar o Gmail agora. Verifique sua conexão com a internet "
+                    "(e se uma VPN, proxy ou antivírus não está bloqueando o acesso).")
+        return f"Ocorreu um erro ao acessar o Gmail: {e}"
